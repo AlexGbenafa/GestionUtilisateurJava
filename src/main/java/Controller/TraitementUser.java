@@ -72,8 +72,20 @@ public class TraitementUser {
         return u;
     }
     
-    public ResultSet showUser(){        
-        return null;
+    public ResultSet showUser(){
+        connectDB connection = new connectDB();
+        connection.connect();
+        ResultSet rs = null;
+        
+        String req = "SELECT * FROM users ORDER BY nom";
+        
+        try {
+            rs = connection.st.executeQuery(req);
+        } catch (SQLException ex) {
+            Logger.getLogger(TraitementUser.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        
+        return rs;
     }
     
     //Fonction qui recherche un utilisateur dans la base de donnee et qui renvoie ces infos sous format RS(ResultSet)

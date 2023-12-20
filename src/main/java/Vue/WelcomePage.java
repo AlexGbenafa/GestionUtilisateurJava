@@ -232,7 +232,6 @@ public class WelcomePage extends javax.swing.JFrame {
         traitement.updateUserWelcome(u);
         JOptionPane.showMessageDialog(null,"MISE A JOUR EFFECTUÉ");
         
-        
     }//GEN-LAST:event_jButton2ActionPerformed
     private void cleanLabel(Integer id){
         idLabel.setText(id.toString());
