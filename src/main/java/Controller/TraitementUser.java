@@ -28,10 +28,22 @@ public class TraitementUser {
         }
     }
     
-    public void updateUser(User u, int id){
+    public void updateUser(User u){
         connectDB cdb = new connectDB();
         cdb.connect();
-        String req = "UPDATE users SET prenom = '"+u.getPrenom()+"', nom = '"+u.getNom()+"', login = '"+u.getLogin()+"', password = '"+u.getPassword()+"', telephone = '"+u.getTelephone()+"' WHERE id = '"+id+"' ";
+        String req = "UPDATE users SET prenom = '"+u.getPrenom()+"', nom = '"+u.getNom()+"', login = '"+u.getLogin()+"', password = '"+u.getPassword()+"', telephone = '"+u.getTelephone()+"' WHERE id = '"+u.getId()+"' ";
+        
+        try {
+            cdb.st.executeUpdate(req);
+        } catch (SQLException ex) {
+            Logger.getLogger(TraitementUser.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+    
+        public void updateUserWelcome(User u){
+        connectDB cdb = new connectDB();
+        cdb.connect();
+        String req = "UPDATE users SET prenom = '"+u.getPrenom()+"', nom = '"+u.getNom()+"', login = '"+u.getLogin()+"' WHERE id = '"+u.getId()+"' ";
         
         try {
             cdb.st.executeUpdate(req);

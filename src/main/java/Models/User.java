@@ -35,6 +35,12 @@ public class User {
         this.password = password;
         this.telephone = telephone;
         }
+        public User( int id, String prenom, String nom, String login) {
+            this.id = id;
+            this.prenom = prenom;
+            this.nom = nom;
+            this.login = login;
+        }
 
     public int getId() {
         return id;

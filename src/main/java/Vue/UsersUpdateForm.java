@@ -156,8 +156,6 @@ public class UsersUpdateForm extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
-        String idMAJ = idUpdateForm.getText();
-        int idAMAJ = Integer.parseInt(idMAJ);
         String nom = nomForm.getText();
         String prenom = prenomForm.getText();
         String login = loginForm.getText();
@@ -169,8 +167,7 @@ public class UsersUpdateForm extends javax.swing.JFrame {
 
         TraitementUser traitement = new TraitementUser();
 
-        traitement.updateUser(u, idAMAJ);
-
+        traitement.updateUser(u);
     }//GEN-LAST:event_jButton3ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
