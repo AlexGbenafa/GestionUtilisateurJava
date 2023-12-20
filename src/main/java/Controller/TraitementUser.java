@@ -84,4 +84,30 @@ public class TraitementUser {
         //Retourne le resultat de la requete sous format resultSet
         return rs;
     }
+    
+    public User findByID(int id){
+        connectDB connection = new connectDB();
+        connection.connect();
+        ResultSet rs = null;
+        User searchedUser = new User();
+        
+        //Requete SQL
+        String req = "SELECT * FROM users WHERE id = '"+id+"' ";
+        
+        try {
+            rs = connection.st.executeQuery(req);
+            if(rs.next()){
+                searchedUser.setId(rs.getInt("id"));
+                searchedUser.setPrenom(rs.getString("prenom"));
+                searchedUser.setNom(rs.getString("nom"));
+                searchedUser.setLogin(rs.getString("login"));
+            }else{
+                searchedUser  = null;
+            }
+        } catch (SQLException ex) {
+            Logger.getLogger(TraitementUser.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        
+       return searchedUser; 
+    }
 }
