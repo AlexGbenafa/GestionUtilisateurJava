@@ -216,7 +216,7 @@ public class WelcomePage extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        int id = Integer.parseInt(idFormValue.getText());
+        Integer id = Integer.valueOf(idFormValue.getText());
         
         String nom = null;
         String prenom = null;
@@ -228,7 +228,7 @@ public class WelcomePage extends javax.swing.JFrame {
         
         if(test != null){
             
-           //idLabel.setText(id);
+           idLabel.setText(id.toString());
            
            nom = test.getNom();
            nomLabel.setText(nom);
@@ -240,6 +240,7 @@ public class WelcomePage extends javax.swing.JFrame {
            loginLabel.setText(login);
         }else{
             JOptionPane.showMessageDialog(null,"UTILISATEUR NON TROUVÉ");
+            idLabel.setText(id.toString());
             idLabel.setText(null);
             nomLabel.setText(null);
             prenomLabel.setText(null);
