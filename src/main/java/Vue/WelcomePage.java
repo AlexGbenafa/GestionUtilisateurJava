@@ -6,6 +6,7 @@ package Vue;
 
 import Controller.TraitementUser;
 import Models.User;
+import javax.swing.JOptionPane;
 /**
  *
  * @author alexk
@@ -227,7 +228,7 @@ public class WelcomePage extends javax.swing.JFrame {
         
         if(test != null){
             
-           //idLabel.setText(Integer.parseInt(id));
+           idLabel.setText(id);
            
            nom = test.getNom();
            nomLabel.setText(nom);
@@ -238,7 +239,7 @@ public class WelcomePage extends javax.swing.JFrame {
            login = test.getLogin();
            loginLabel.setText(login);
         }else{
-            System.out.println("UTILISATEUR NON EXISTANT");
+            JOptionPane.showMessageDialog(null,"UTILISATEUR NON TROUVÉ");
             idLabel.setText(null);
             nomLabel.setText(null);
             prenomLabel.setText(null);
