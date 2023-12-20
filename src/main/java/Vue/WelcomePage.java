@@ -228,7 +228,7 @@ public class WelcomePage extends javax.swing.JFrame {
         
         if(test != null){
             
-           idLabel.setText(id);
+           //idLabel.setText(id);
            
            nom = test.getNom();
            nomLabel.setText(nom);
