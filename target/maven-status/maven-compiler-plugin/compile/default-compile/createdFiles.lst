@@ -1,10 +1,12 @@
 Vue\UsersAddForm.class
 Vue\UsersShow$1.class
+Vue\WelcomePage$2.class
 Vue\UserMain$2.class
 Vue\UsersUpdateForm$2.class
 Vue\LoginErrorForm$3.class
 Vue\UsersAddForm$2.class
 Vue\UsersDeleteForm$3.class
+Vue\WelcomePage$4.class
 Vue\LoginForm$4.class
 Vue\UsersShow.class
 Vue\LoginErrorForm$1.class
@@ -21,6 +23,7 @@ Vue\LoginForm$3.class
 Vue\UserMain$3.class
 Vue\UsersShow$2.class
 Vue\UsersAddForm$1.class
+Vue\WelcomePage$3.class
 Vue\UserMain.class
 Vue\UsersDeleteForm$2.class
 Vue\LoginForm.class
