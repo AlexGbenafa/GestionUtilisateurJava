@@ -23,7 +23,7 @@ public class connectDB {
         //Steps to create mysql database connexion(JDBC)
         //1-load driver
         try { 
-            Class.forName("com.mysql.cj.jdbc.Dr");
+            Class.forName("com.mysql.cj.jdbc.Driver");
 
         } catch (ClassNotFoundException ex) {
             Logger.getLogger(connectDB.class.getName()).log(Level.SEVERE, "Drivers inexistant", ex);
