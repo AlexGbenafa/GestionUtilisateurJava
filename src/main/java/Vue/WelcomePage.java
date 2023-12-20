@@ -70,6 +70,11 @@ public class WelcomePage extends javax.swing.JFrame {
         jButton3.setBackground(new java.awt.Color(255, 0, 0));
         jButton3.setForeground(new java.awt.Color(255, 255, 255));
         jButton3.setText("SUPPRIMER");
+        jButton3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton3ActionPerformed(evt);
+            }
+        });
 
         idLabel.setEditable(false);
 
@@ -229,7 +234,13 @@ public class WelcomePage extends javax.swing.JFrame {
         
         
     }//GEN-LAST:event_jButton2ActionPerformed
-
+    private void cleanLabel(Integer id){
+        idLabel.setText(id.toString());
+        idLabel.setText(null);
+        nomLabel.setText(null);
+        prenomLabel.setText(null);
+        loginLabel.setText(null);
+    }
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         Integer id = Integer.valueOf(idFormValue.getText());
         
@@ -256,14 +267,20 @@ public class WelcomePage extends javax.swing.JFrame {
         }else{
             //JOptionPane.showMessageDialog pour afficher un message box
             JOptionPane.showMessageDialog(null,"UTILISATEUR NON TROUVÉ");
-            
-            idLabel.setText(id.toString());
-            idLabel.setText(null);
-            nomLabel.setText(null);
-            prenomLabel.setText(null);
-            loginLabel.setText(null);
+            cleanLabel(id);
         }
     }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+
+        Integer idToDelete = Integer.valueOf(idLabel.getText());
+        
+        TraitementUser traitement = new TraitementUser();
+        
+        traitement.deleteUser(idToDelete);
+        cleanLabel(idToDelete);
+        JOptionPane.showMessageDialog(null,"UTILISATEUR SUPPRIMÉ");
+    }//GEN-LAST:event_jButton3ActionPerformed
 
     /**
      * @param args the command line arguments
